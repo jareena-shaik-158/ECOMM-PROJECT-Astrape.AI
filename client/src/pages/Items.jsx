@@ -15,7 +15,7 @@ function Items() {
 
   const fetchItems = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/items", {
+      const res = await axios.get("https://ecomm-project-astrape-ai-2.onrender.com/api/items", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setItems(res.data);
@@ -29,7 +29,7 @@ function Items() {
     if (!name || !price || !category) return alert("Please fill all required fields");
     try {
       await axios.post(
-        "http://localhost:5000/api/items",
+        "https://ecomm-project-astrape-ai-2.onrender.com/api/items",
         { name, price, category, description },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -42,7 +42,7 @@ function Items() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/items/${id}`, {
+      await axios.delete(`https://ecomm-project-astrape-ai-2.onrender.com/api/items/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setItems(items.filter(item => item._id !== id));
@@ -54,7 +54,7 @@ function Items() {
   const handleAddToCart = async (item) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/cart/",
+        "https://ecomm-project-astrape-ai-2.onrender.com/api/cart/",
         {
           userId,
           item: {
