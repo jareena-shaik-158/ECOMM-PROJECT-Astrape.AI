@@ -11,7 +11,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://ecomm-project-astrape-ai-2.onrender.com/api/auth/login", {
+      const res = await axios.post("https://ecomm-project-astrape-ai-6.onrender.com/api/auth/login", {
         email,
         password,
       });
