@@ -11,7 +11,7 @@ function Cart() {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get(`https://ecomm-project-astrape-ai-2.onrender.com/api/cart/find/${userId}`, {
+      const res = await axios.get(`https://ecomm-project-astrape-ai-6.onrender.com/api/cart/find/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCartItems(res.data?.items || []);
@@ -23,7 +23,7 @@ function Cart() {
   const handleRemove = async (itemId) => {
     try {
       const updatedItems = cartItems.filter(item => item.itemId !== itemId);
-      await axios.put(`https://ecomm-project-astrape-ai-2.onrender.com/api/cart/${userId}`, { items: updatedItems }, {
+      await axios.put(`https://ecomm-project-astrape-ai-6.onrender.com/api/cart/${userId}`, { items: updatedItems }, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCartItems(updatedItems);
